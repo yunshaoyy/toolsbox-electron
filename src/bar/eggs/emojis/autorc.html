@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: rgb(50, 50, 50);
+            text-align: center;
+            color: rgb(250, 250, 250);
+        }
+
+        img {
+            width: 250px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            flex: 1;
+        }
+
+        .center-pane {
+            flex: 1;
+        }
+
+        .right-pane {
+            flex: 1;
+        }
+    </style>
+</head>
+<!--https://github.com/yunshaoyy/toolsbox-server-->
+<body>
+    <div class="container">
+        <div class="left-pane">
+            <img src="">
+        </div>
+        <div class="center-pane">
+            <img src="">
+        </div>
+        <div class="right-pane">
+            <img src="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-pane">
+            <img id="slideshow-image1" src="">
+        </div>
+        <div class="center-pane">
+            <img id="slideshow-image2" src="">
+        </div>
+        <div class="right-pane">
+            <img id="slideshow-image3" src="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-pane">
+            <img src="">
+        </div>
+        <div class="center-pane">
+            <img src="">
+        </div>
+        <div class="right-pane">
+            <img src="">
+        </div>
+    </div>
+
+    <script>
+        const images = [];
+        let currentIndex1 = 0;
+
+        setInterval(() => {
+            currentIndex1 = (currentIndex1 + 1) % images.length;
+            document.getElementById("slideshow-image1").src = images[currentIndex1];
+        }, 10000);
+        let currentIndex2 = 0;
+
+        setInterval(() => {
+            currentIndex2 = (currentIndex2 + 1) % images.length;
+            document.getElementById("slideshow-image2").src = images[currentIndex2];
+        }, 10000);
+        let currentIndex3 = 0;
+
+        setInterval(() => {
+            currentIndex3 = (currentIndex3 + 1) % images.length;
+            document.getElementById("slideshow-image3").src = images[currentIndex3];
+        }, 10000);
+
+        setInterval(() => {
+            const now = new Date();
+            if (now.getHours() === 14 && now.getMinutes() === 0) window.close();
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

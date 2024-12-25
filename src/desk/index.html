@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#right {
+			color: rgb(250, 250, 250);
+			text-align: right;
+		}
+	</style>
+</head>
+
+<!--https://github.com/yunshaoyy/toolsbox-->
+
+<body onload="fxianzai(),fgaokao(),fhuijia(),fjuzi()">
+	<div id="right">
+		<h1 id="xianzai"></h1>
+		<h1 id="gaokao"></h1>
+		<h1 id="huijia"></h1>
+		<h1 id="juzi"></h1>
+	</div>
+
+	<script>
+		let huijia = new Date();
+		huijia.setHours(21, 50, 0, 0);
+		function fhuijia() {
+			let now = new Date();
+			let lhuijia = huijia - now;
+			let hhours = Math.floor(lhuijia / (1000 * 60 * 60));
+			let hminutes = Math.floor((lhuijia % (1000 * 60 * 60)) / (1000 * 60));
+			let hseconds = Math.floor((lhuijia % (1000 * 60)) / 1000);
+			document.getElementById("huijia").innerHTML = `距离回家：${hhours}时${hminutes}分${hseconds}秒。`;
+		}
+		setInterval(fhuijia, 1000);
+
+		function fxianzai() {
+			let xianzai = new Date();
+			document.getElementById("xianzai").innerHTML = "现在是" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒。";
+		}
+		setInterval(fxianzai, 1000);
+
+		let gaokao = new Date(2025, 6 - 1, 7, 9, 0);
+		function fgaokao() {
+			//let xianzai = new Date();
+			//let d = (gaokao.getTime() - xianzai.getTime()) / 86400000;
+			//document.getElementById("gaokao").innerHTML = "d.toFixed(0) + "."
+			let now = new Date();
+			let lgaokao = gaokao - now;
+			let gdays = Math.floor(lgaokao / (1000 * 60 * 60 * 24));
+			let ghours = Math.floor((lgaokao % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
+			let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
+			document.getElementById("gaokao").innerHTML = `距离高考：${gdays}天${ghours}时${gminutes}分${gseconds}秒。`;
+		}
+		setInterval(fgaokao, 1000);
+
+		const urls = [
+			'https://v1.jinrishici.com/all',
+
+		];
+		let currentUrlIndex = 0;
+		function fjuzi() {
+			fetch(urls[currentUrlIndex])
+				.then(response => response.json())
+				.then(data => {
+					const juzi = data.content;
+					document.getElementById('juzi').textContent = juzi;
+				})
+			currentUrlIndex = (currentUrlIndex + 1) % urls.length;
+		}
+		setInterval(fjuzi, 50000);
+
+		const targetHour = 13;
+		const targetMinute = 0;
+		function executeTask() {
+			window.open('autorc.html', '_blank')
+		}
+		function checkTime() {
+			const now = new Date();
+			if (now.getHours() === targetHour && now.getMinutes() === targetMinute) {
+				executeTask();
+			}
+		}
+		setInterval(checkTime, 60000);
+	</script>
+</body>
+
+</html>
