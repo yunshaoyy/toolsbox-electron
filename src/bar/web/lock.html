@@ -24,16 +24,22 @@
 
 <body>
     <input type="text" id="input" style="width:1314px;"></input>
-    <p><a href="javascript:void(0);" onclick='next()'>验证</a></p>
+    <p>
+        <a href="javascript:void(0);" onclick='fclose()'>关闭</a>
+        <a href="javascript:void(0);" onclick='next()'>验证</a>
+    </p>
 
     <script>
+        function fclose() {
+            window.close();
+        }
         function next() {
             const content = document.getElementById('input').value.trim();
             if (content === "") {
                 window.close()
             }
             else {
-                if (content === "fweb070425") {
+                if (content === "070425") {
                     document.getElementById('input').value = '';
                     start();
                 }

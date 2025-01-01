@@ -11,83 +11,21 @@
         }
 
         img {
-            width: 250px;
-        }
-
-        .container {
-            display: flex;
-        }
-
-        .left-pane {
-            flex: 1;
-        }
-
-        .center-pane {
-            flex: 1;
-        }
-
-        .right-pane {
-            flex: 1;
+            width: 520px;
         }
     </style>
 </head>
-
+<!--https://github.com/yunshaoyy/toolsbox-->
 <body>
-
-    <div class="container">
-        <div class="left-pane">
-            <img src="1.gif">
-        </div>
-        <div class="center-pane">
-            <img src="2.gif">
-        </div>
-        <div class="right-pane">
-            <img src="3.gif">
-        </div>
-    </div>
-    <div class="container">
-        <div class="left-pane">
-            <img id="slideshow-image1" src="1.gif">
-        </div>
-        <div class="center-pane">
-            <img id="slideshow-image2" src="1.gif">
-        </div>
-        <div class="right-pane">
-            <img id="slideshow-image3" src="1.gif">
-        </div>
-    </div>
-    <div class="container">
-        <div class="left-pane">
-            <img src="3.gif">
-        </div>
-        <div class="center-pane">
-            <img src="2.gif">
-        </div>
-        <div class="right-pane">
-            <img src="1.gif">
-        </div>
-    </div>
+    <img id="slideshow-image" src="1.gif">
     <script>
         const images = ["1.gif", "2.gif", "3.gif"];
-        let currentIndex1 = 0;
+        let currentIndex = 0;
 
         setInterval(() => {
-            currentIndex1 = (currentIndex1 + 1) % images.length;
-            document.getElementById("slideshow-image1").src = images[currentIndex1];
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("slideshow-image").src = images[currentIndex];
         }, 10000);
-        let currentIndex2 = 0;
-
-        setInterval(() => {
-            currentIndex2 = (currentIndex2 + 1) % images.length;
-            document.getElementById("slideshow-image2").src = images[currentIndex2];
-        }, 10000);
-        let currentIndex3 = 0;
-
-        setInterval(() => {
-            currentIndex3 = (currentIndex3 + 1) % images.length;
-            document.getElementById("slideshow-image3").src = images[currentIndex3];
-        }, 10000);
-
     </script>
 </body>
 

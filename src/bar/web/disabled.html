@@ -23,17 +23,15 @@
 <!--https://github.com/yunshaoyy/toolsbox-->
 
 <body onload="tts()">
-    <p>鉴权失败，关闭窗口请按“关闭”键。</p>
-    <p><a href="javascript:void(0);" onclick='next()'>关闭</a></p>
+    <p><a href="javascript:void(0);" onclick='fclose()'>关闭</a></p>
 
     <script>
-        function next() {
+        function fclose() {
             window.close();
-
         }
         function tts() {
             //tts
-            const utterance = new SpeechSynthesisUtterance("鉴权失败，关闭窗口请按“关闭”键。");
+            const utterance = new SpeechSynthesisUtterance("验证失败");
             speechSynthesis.speak(utterance);
         }
     </script>
