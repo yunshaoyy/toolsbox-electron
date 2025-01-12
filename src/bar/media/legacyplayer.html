@@ -12,7 +12,9 @@
         audio {
             width: 1314px;
         }
-        
+
+        /*or*/
+
         video {
             width: 1314px;
         }
@@ -23,13 +25,14 @@
 
 <body>
     <audio id="audioplayer" src="" autoplay controls></audio>
+    <!--or-->
     <video id="videoplayer" src="" autoplay controls></video>
     <script>
         const audio = document.getElementById('audioplayer');
         audio.addEventListener('ended', function () {
             window.close();
         });
-        
+        //or
         const video = document.getElementById('videoplayer');
         audio.addEventListener('ended', function () {
             window.close();

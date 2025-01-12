@@ -23,6 +23,7 @@
 <!--https://github.com/yunshaoyy/toolsbox-->
 
 <body onload="tts()">
+    <p>错误</p>
     <p><a href="javascript:void(0);" onclick='fclose()'>关闭</a></p>
 
     <script>
@@ -31,7 +32,7 @@
         }
         function tts() {
             //tts
-            const utterance = new SpeechSynthesisUtterance("验证失败");
+            const utterance = new SpeechSynthesisUtterance("错误");
             speechSynthesis.speak(utterance);
         }
     </script>

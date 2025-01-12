@@ -2,11 +2,11 @@
 document.addEventListener('keydown', function (event) {
     if (event.key === 'PageUp') {
         const upEvent = new KeyboardEvent('keydown', {
-            key: 'ArrowUp',  
-            code: 'ArrowUp', 
-            keyCode: 38,    
-            charCode: 0,    
-            bubbles: true,  
+            key: 'ArrowUp',
+            code: 'ArrowUp',
+            keyCode: 38,
+            charCode: 0,
+            bubbles: true,
             cancelable: true,
         });
         document.dispatchEvent(upEvent);
@@ -32,11 +32,11 @@ document.addEventListener('keyup', function (event) {
 document.addEventListener('keydown', function (event) {
     if (event.key === 'PageDown') {
         const downEvent = new KeyboardEvent('keydown', {
-            key: 'ArrowDown', 
+            key: 'ArrowDown',
             code: 'ArrowDown',
-            keyCode: 40,      
-            charCode: 0,      
-            bubbles: true,   
+            keyCode: 40,
+            charCode: 0,
+            bubbles: true,
             cancelable: true,
         });
         document.dispatchEvent(downEvent);
