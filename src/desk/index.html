@@ -12,15 +12,14 @@
 
 <!--https://github.com/yunshaoyy/toolsbox-->
 
-<body onload="fxianzai(),fgaokao()">
+<body onload="fxianzai(),fgaokao(),fhuijia()">
 	<div id="right">
 		<h1 id="xianzai"></h1>
 		<h1 id="gaokao"></h1>
-		<!--<h1 id="huijia"></h1>-->
+		<h1 id="huijia"></h1>
 	</div>
 
 	<script>
-		/*
 		let huijia = new Date();
 		huijia.setHours(21, 50, 0, 0);
 		function fhuijia() {
@@ -29,10 +28,10 @@
 			let hhours = Math.floor(lhuijia / (1000 * 60 * 60));
 			let hminutes = Math.floor((lhuijia % (1000 * 60 * 60)) / (1000 * 60));
 			let hseconds = Math.floor((lhuijia % (1000 * 60)) / 1000);
-			document.getElementById("huijia").innerHTML = `${hhours}时${hminutes}分${hseconds}秒`;
+			document.getElementById("huijia").innerHTML = `还有${hhours}时${hminutes}分${hseconds}秒回家`;
 		}
 		setInterval(fhuijia, 1000);
-		*/
+
 		function fxianzai() {
 			let xianzai = new Date();
 			document.getElementById("xianzai").innerHTML = "现在是" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒";
