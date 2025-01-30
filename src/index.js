@@ -1,4 +1,4 @@
-//https://github.com/yunshaoyy/toolsbox
+//https://github.com/yunshaoyy
 const { app, BrowserWindow, screen } = require('electron/main')
 const path = require('path');
 
@@ -54,8 +54,6 @@ app.on('web-contents-created', (e, webContents) => {
       action: 'allow',
       overrideBrowserWindowOptions: {
         autoHideMenuBar: true,
-        maximizable: false,
-        resizable: false,
         width: screenWidth,
         height: screenHeight,
         webPreferences: {
