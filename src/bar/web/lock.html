@@ -36,7 +36,7 @@
         function next() {
             const content = document.getElementById('input').value.trim();
             if (content === "") {
-                window.location.href = "disabled.html";
+                window.close();
             }
             else {
                 if (content === "070425") {
@@ -44,12 +44,9 @@
                     start();
                 }
                 else {
-                    disabled();
+                    window.close();
                 }
             }
-        }
-        function disabled() {
-            window.location.href = "disabled.html";
         }
         function start() {
             window.location.href = "index.html";

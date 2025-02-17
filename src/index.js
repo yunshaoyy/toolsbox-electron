@@ -19,9 +19,9 @@ app.on('ready', () => {
 
 function createChat() {
   const win = new BrowserWindow({
-    width: 500,
+    width: 450,
     height: 250,
-    x: screenWidth - 500,
+    x: screenWidth - 450,
     y: screenHeight - 250,
     resizable: false,
     frame: false,

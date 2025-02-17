@@ -40,7 +40,7 @@
         function next() {
             const content = document.getElementById('input').value.trim();
             if (content === "") {
-                window.location.href = "disabled.html";
+                window.close();
             }
             else {
                 if (content.match(/^https?:\/\//)) {
@@ -48,7 +48,7 @@
                     endcontent = content;
                 }
                 else {
-                    window.location.href = "disabled.html";
+                    window.close();
                 }
                 window.location.href = endcontent;
             }
