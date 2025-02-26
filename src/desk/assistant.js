@@ -1,14 +1,13 @@
 const classTimes = [
     { startTime: "08:10", endTime: "08:55" },
     { startTime: "09:05", endTime: "09:50" },
-    { startTime: "09:50", endTime: "10:15" },
+    { startTime: "10:15", endTime: "11:00" },
     { startTime: "11:10", endTime: "11:45" },
     { startTime: "14:10", endTime: "14:50" },
     { startTime: "15:00", endTime: "15:40" },
     { startTime: "15:50", endTime: "16:30" },
     { startTime: "16:40", endTime: "17:20" },
     { startTime: "18:20", endTime: "21:50" },
-    //{ startTime: "23:10", endTime: "23:12" }
 ];
 
 function startAutoSpeech() {
