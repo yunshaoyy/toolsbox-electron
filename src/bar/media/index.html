@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        a {
+            color: rgb(250, 250, 250);
+            text-decoration: none;
+        }
+
+        h1 {
+            color: rgb(250, 250, 250);
+            text-align: center;
+        }
+
+        body {
+            background: rgb(50, 50, 50);
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .center-pane {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .right-pane {
+            flex: 1;
+            padding: 50px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        #mediaplayer {
+            text-align: center;
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            right: 0%;
+        }
+    </style>
+</head>
+
+<!--https://github.com/yunshaoyy-->
+
+<body>
+    <div id="mediaplayer">
+        <audio controls autoplay onended="window.close()">
+            <source type="audio/mp3">
+        </audio>
+    </div>
+    <div class="container">
+        <div class="left-pane">
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/wjlivezjl.mp3')">周杰伦 - 瓦解</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/qtzjl.mp3')">周杰伦 - 晴天</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/ltxzjl.mp3')">周杰伦 - 兰亭序</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/ffxdzzjl.mp3')">周杰伦 - 反方向的钟</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/nbcqkllivezjl.mp3')">周杰伦 - 你比从前快乐</a>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/yyxzq.mp3')">薛之谦 - 演员</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/cbgxzq.mp3')">薛之谦 - 丑八怪</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/twlwxzq.mp3')">薛之谦 - 天外来物</a></p>
+        </div>
+        <div class="center-pane">
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/sncyx.mp3')">陈奕迅 - 十年</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/kylcyx.mp3')">陈奕迅 - 可以了</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/gdhzcyx.mp3')">陈奕迅 - 孤独患者</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/lhlscyx.mp3')">陈奕迅 - 落花流水</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/ysbgcyx.mp3')">陈奕迅 - 一丝不挂</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/cjyhsggx.mp3')">蔡健雅 - 红色高跟鞋</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/ylybdcjy.mp3')">蔡健雅 - 越来越不懂</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/lettinggocjy.mp3')">蔡健雅 - Letting Go</a></p>
+        </div>
+        <div class="right-pane">
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/jylrh.mp3')">李荣浩 - 戒烟</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/lrhml.m4a')">李荣浩 - 慢冷</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/shuixqb.mp3')">曲肖冰 - 谁</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/pxczj.mp3')">陈子靖 - 偏向</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/bsjqsxj.mp3')">苏星婕 - 悲伤剧情</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/jbdoyyy.mp3')">欧阳耀莹 - 戒不掉</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/fanyumajiko.mp3')">まじ娘 - アイロニ</a></p>
+            <p><a href="javascript:void(0);" onclick="playMusic(event, 'sources/bhyphgnwel.m4a')">王贰浪 - 把回忆拼好给你</a></p>
+        </div>
+    </div>
+
+    <script>
+        const mediaplayer = document.getElementById('mediaplayer');
+        function playMusic(event, musicSrc) {
+            event.preventDefault();
+            mediaplayer.innerHTML = `<audio controls autoplay onended="window.close()"><source src="${musicSrc}" type="audio/mp3"></audio>`;
+        }
+    </script>
+</body>
+
+</html>
