@@ -11,15 +11,16 @@ const classTimes = [
 ];
 
 function startAutoSpeech() {
+    const gaokaotime = document.getElementById("gaokao").innerText;
     const currentTime = new Date();
     const now = `${padZero(currentTime.getHours())}:${padZero(currentTime.getMinutes())}`;
     classTimes.forEach(classTime => {
         if (now === classTime.startTime) {
-            const msg = new SpeechSynthesisUtterance("上课时间已到，上课时间已到");
+            const msg = new SpeechSynthesisUtterance(`上课时间已到，上课时间已到。温馨提示：${gaokaotime}`);
             speechSynthesis.speak(msg);
         }
         if (now === classTime.endTime) {
-            const endMsg = new SpeechSynthesisUtterance("下课时间已到，老师，您辛苦了");
+            const endMsg = new SpeechSynthesisUtterance(`下课时间已到，老师，您辛苦了。温馨提示：${gaokaotime}`);
             speechSynthesis.speak(endMsg);
         }
     });
