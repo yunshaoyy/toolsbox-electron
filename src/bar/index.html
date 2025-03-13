@@ -4,35 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body {
-            background-color: rgb(50, 50, 50);
-        }
-
         a {
             text-decoration: none;
             color: rgb(250, 250, 250);
         }
 
-        p {
-            color: rgb(250, 250, 250);
-        }
-
-        #chat {
-            position: absolute;
-            top: 10%;
-            left: 0%;
-            right: 0%;
-            text-align: center;
-        }
-
-        #input {
-            width: 75%;
-        }
-
         #toolsbar {
             text-align: center;
             position: absolute;
-            bottom: 10%;
+            bottom: 0%;
             left: 0%;
             right: 0%;
         }
@@ -47,20 +27,10 @@
 <!--https://github.com/yunshaoyy-->
 
 <body>
-    <div id="chat">
-        <p></p>
-        <input type="text" id="input">
-        <p id="response"></p>
-        <div>
-            <a href="javascript:void(0);" onclick="cleartext()">清除</a>
-            <a href="javascript:void(0);" onclick="sendtext()">发送</a>
-        </div>
-        <p></p>
-    </div>
-
     <div id="toolsbar">
         <p></p>
         <div>
+            <a href="chat.html" target="_blank">聊天</a>
             <a href="web/lock.html" target="_blank">网页</a>
             <a href="yulu.html" target="_blank">语录</a>
             <a href="media/index.html" target="_blank">媒体</a>
@@ -69,48 +39,6 @@
         </div>
         <p></p>
     </div>
-
-    <script>
-        function cleartext() {
-            document.getElementById('response').innerText = "";
-        }
-
-        async function sendtext() {
-            const content = document.getElementById('input').value.trim();
-            let responseText = '';
-
-            if (!content) {
-                return;
-            }
-
-            if (content.includes("查分")) {
-                document.getElementById('input').value = '';
-                window.open("https://i7w15pvd.yichafen.com", "_blank");
-                return;
-            }
-
-            if (content.includes("嘻嘻")) {
-                responseText = '嘻嘻';
-            }
-            else if (content.includes("嘿嘿")) {
-                responseText = '嘿嘿';
-            }
-            else {
-                const response = await fetch("https://v2.xxapi.cn/api/turing?msg=" + content);
-                const data = await response.json();
-                responseText = data.data;
-            }
-
-            document.getElementById('response').innerText = responseText;
-
-            //tts
-            const utterance = new SpeechSynthesisUtterance(responseText);
-            speechSynthesis.speak(utterance);
-
-            //clear
-            document.getElementById('input').value = '';
-        }
-    </script>
 </body>
 
 </html>

@@ -17,15 +17,16 @@ app.on('ready', () => {
   screenHeight = height;
 });
 
-function createChat() {
+function createBar() {
   const win = new BrowserWindow({
-    width: 450,
-    height: 250,
-    x: screenWidth - 450,
-    y: screenHeight - 250,
+    width: 400,
+    height: 40,
+    x: (screenWidth - 400) / 2,
+    y: screenHeight - 100,
     resizable: false,
     frame: false,
     skipTaskbar: true,
+    transparent: true,
   })
   win.loadFile('src/bar/index.html')
 }
@@ -45,7 +46,7 @@ function createDesk() {
 
 app.whenReady().then(() => {
   createDesk()
-  createChat()
+  createBar()
 })
 
 app.on('web-contents-created', (e, webContents) => {
