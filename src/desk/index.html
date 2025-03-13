@@ -52,7 +52,7 @@
 		function fgaokao() {
 			let xianzai = new Date();
 			let d = (gaokao.getTime() - xianzai.getTime()) / 86400000;
-			document.getElementById("gaokao").innerHTML = "还有" + d.toFixed(0) + "天高考";
+			document.getElementById("gaokao").innerHTML = "还有" + d.toFixed(1) + "天高考";
 			/*
 			let now = new Date();
 			let lgaokao = gaokao - now;
