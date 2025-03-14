@@ -21,8 +21,8 @@
 <body onload="fxianzai(),fgaokao(),fhuijia()">
 	<div id="right">
 		<h1 id="xianzai"></h1>
-		<h1 id="huijia"></h1>
 		<h1 id="gaokao"></h1>
+		<h1 id="huijia"></h1>
 	</div>
 	<div id="center">
 		<img src="kcb.jpg" width="300" height="300">
@@ -50,10 +50,6 @@
 
 		let gaokao = new Date(2025, 6 - 1, 7, 9, 0);
 		function fgaokao() {
-			let xianzai = new Date();
-			let d = (gaokao.getTime() - xianzai.getTime()) / 86400000;
-			document.getElementById("gaokao").innerHTML = "还有" + d.toFixed(1) + "天高考";
-			/*
 			let now = new Date();
 			let lgaokao = gaokao - now;
 			let gdays = Math.floor(lgaokao / (1000 * 60 * 60 * 24));
@@ -61,7 +57,6 @@
 			let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
 			let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
 			document.getElementById("gaokao").innerHTML = `还有${gdays}天${ghours}时${gminutes}分${gseconds}秒高考`;
-			*/
 		}
 		setInterval(fgaokao, 1000);
 
