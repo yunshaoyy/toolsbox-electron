@@ -16,11 +16,11 @@ function startAutoSpeech() {
     const now = `${padZero(currentTime.getHours())}:${padZero(currentTime.getMinutes())}`;
     classTimes.forEach(classTime => {
         if (now === classTime.startTime) {
-            const msg = new SpeechSynthesisUtterance(`上课时间已到，上课时间已到。温馨提示：${gaokaotime}`);
+            const msg = new SpeechSynthesisUtterance(`上课时间已到。温馨提示：${gaokaotime}`);
             speechSynthesis.speak(msg);
         }
         if (now === classTime.endTime) {
-            const endMsg = new SpeechSynthesisUtterance(`下课时间已到，老师，您辛苦了。温馨提示：${gaokaotime}`);
+            const endMsg = new SpeechSynthesisUtterance(`下课时间已到。温馨提示：${gaokaotime}`);
             speechSynthesis.speak(endMsg);
         }
     });
@@ -32,3 +32,9 @@ function padZero(num) {
 }
 
 setInterval(startAutoSpeech, 60000);
+
+loadtts();
+function loadtts() {
+    const loadttstext = new SpeechSynthesisUtterance(`出路千万条，高考第一条。学习不认真，做题两行泪。`);
+    speechSynthesis.speak(loadttstext);
+}
