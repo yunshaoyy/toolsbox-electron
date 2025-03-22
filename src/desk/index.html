@@ -4,18 +4,20 @@
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="assistant.js"></script>
 	<style>
-		#right {
-			color: rgb(250, 250, 250);
+		#countdown {
+			color: white;
 			text-align: right;
-		}
-
-		#center {
 			position: absolute;
-			right: 25%;
+			right: 0%;
+			top: 0%;
 		}
 
-		#sign {
-			color: rgb(250, 250, 250);
+		#xianzai {
+			position: absolute;
+			left: 0%;
+			right: 0%;
+			top: 0%;
+			color: white;
 			text-align: center;
 		}
 	</style>
@@ -24,16 +26,10 @@
 <!--https://github.com/yunshaoyy-->
 
 <body onload="fxianzai(),fgaokao(),fhuijia()">
-	<div id="right">
-		<h1 id="xianzai"></h1>
+	<h1 id="xianzai"></h1>
+	<div id="countdown">
 		<h1 id="gaokao"></h1>
 		<h1 id="huijia"></h1>
-	</div>
-	<h1 id="sign">高考只有一次，人生可以轮回</h1>
-	<div id="center">
-		<img src="kcb.jpg" width="300" height="300">
-		<img src="zxb1.jpg" width="300" height="300">
-		<img src="zxb2.jpg" width="300" height="300">
 	</div>
 	<script>
 		function fhuijia() {
