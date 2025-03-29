@@ -34,8 +34,9 @@ function padZero(num) {
 
 setInterval(startAutoSpeech, 60000);
 
-loadtts();
+setTimeout(loadtts, 3000);
 function loadtts() {
+    const gaokaotime = document.getElementById("gaokao").innerText;
     const loadttstext = new SpeechSynthesisUtterance(`${gaokaotime}`);
     speechSynthesis.speak(loadttstext);
 }
