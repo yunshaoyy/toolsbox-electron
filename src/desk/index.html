@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="assistant.js"></script>
 	<style>
-		#countdown {
+		#huijia {
 			color: white;
 			text-align: right;
 			position: absolute;
@@ -20,6 +20,16 @@
 			color: white;
 			text-align: center;
 		}
+
+		#gaokao {
+			position: absolute;
+			left: 0%;
+			right: 0%;
+			top: 15%;
+			color: white;
+			text-align: center;
+			font-size: 150px;
+		}
 	</style>
 </head>
 
@@ -27,10 +37,8 @@
 
 <body onload="fxianzai(),fgaokao(),fhuijia()">
 	<h1 id="xianzai"></h1>
-	<div id="countdown">
-		<h1 id="gaokao"></h1>
-		<h1 id="huijia"></h1>
-	</div>
+	<h1 id="huijia"></h1>
+	<h1 id="gaokao"></h1>
 	<script>
 		function fhuijia() {
 			let huijia = new Date();
@@ -55,10 +63,11 @@
 			let now = new Date();
 			let lgaokao = gaokao - now;
 			let gdays = Math.floor(lgaokao / (1000 * 60 * 60 * 24));
-			let ghours = Math.floor((lgaokao % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
-			let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
-			document.getElementById("gaokao").innerHTML = `还有${gdays}天${ghours}时${gminutes}分${gseconds}秒高考`;
+			//let ghours = Math.floor((lgaokao % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			//let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
+			//let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
+			//document.getElementById("gaokao").innerHTML = `还有${gdays}天${ghours}时${gminutes}分${gseconds}秒高考`;
+			document.getElementById("gaokao").innerHTML = `还有${gdays}天高考`;
 		}
 		setInterval(fgaokao, 1000);
 

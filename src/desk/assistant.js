@@ -17,11 +17,11 @@ function startAutoSpeech() {
     const now = `${padZero(currentTime.getHours())}:${padZero(currentTime.getMinutes())}`;
     classTimes.forEach(classTime => {
         if (now === classTime.startTime) {
-            const msg = new SpeechSynthesisUtterance(`上课时间到。${gaokaotime}`);
+            const msg = new SpeechSynthesisUtterance(`上课时间到了。${gaokaotime}`);
             speechSynthesis.speak(msg);
         }
         if (now === classTime.endTime) {
-            const endMsg = new SpeechSynthesisUtterance(`下课时间到。${gaokaotime}`);
+            const endMsg = new SpeechSynthesisUtterance(`下课时间到了。${gaokaotime}`);
             speechSynthesis.speak(endMsg);
         }
     });
@@ -33,10 +33,3 @@ function padZero(num) {
 }
 
 setInterval(startAutoSpeech, 60000);
-
-setTimeout(loadtts, 3000);
-function loadtts() {
-    const gaokaotime = document.getElementById("gaokao").innerText;
-    const loadttstext = new SpeechSynthesisUtterance(`${gaokaotime}`);
-    speechSynthesis.speak(loadttstext);
-}
