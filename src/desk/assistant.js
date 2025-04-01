@@ -33,3 +33,9 @@ function padZero(num) {
 }
 
 setInterval(startAutoSpeech, 60000);
+
+setTimeout(load, 1000);
+function load() {
+    let xianzai = new Date();
+    document.getElementById("assistant").innerHTML = "高考与上下课播报模块已于" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒加载";
+}

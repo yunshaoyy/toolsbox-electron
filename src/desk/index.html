@@ -25,10 +25,18 @@
 			position: absolute;
 			left: 0%;
 			right: 0%;
-			top: 15%;
+			top: 21.1%;
 			color: white;
 			text-align: center;
 			font-size: 150px;
+		}
+
+		#states {
+			position: absolute;
+			right: 0%;
+			bottom: 0%;
+			color: white;
+			text-align: right;
 		}
 	</style>
 </head>
@@ -39,6 +47,11 @@
 	<h1 id="xianzai"></h1>
 	<h1 id="huijia"></h1>
 	<h1 id="gaokao"></h1>
+	<div id="states">
+		<p id="runningtime"></p>
+		<p id="toolsbox"></p>
+		<p id="assistant"></p>
+	</div>
 	<script>
 		function fhuijia() {
 			let huijia = new Date();
@@ -70,6 +83,28 @@
 			document.getElementById("gaokao").innerHTML = `还有${gdays}天高考`;
 		}
 		setInterval(fgaokao, 1000);
+
+		load();
+		function load() {
+			let xianzai = new Date();
+			document.getElementById("toolsbox").innerHTML = "toolsbox主程序已于" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒加载";
+		}
+
+		let starttime = new Date();
+		setInterval(continuerunning, 1000);
+		continuerunning();
+		function continuerunning() {
+			let now = new Date();
+			let elapsed = now - starttime;
+			let seconds = Math.floor(elapsed / 1000);
+			let minutes = Math.floor(seconds / 60);
+			let hours = Math.floor(minutes / 60);
+			let days = Math.floor(hours / 24);
+			seconds = seconds % 60;
+			minutes = minutes % 60;
+			hours = hours % 24;
+			document.getElementById("runningtime").innerHTML = "toolsbox主程序已运行" + (days > 0 ? days + "天" : "") + hours + "时" + minutes + "分" + seconds + "秒";
+		}
 
 		/*
 		const urls = [
