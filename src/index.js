@@ -19,9 +19,9 @@ app.on('ready', () => {
 
 function createBar() {
   const win = new BrowserWindow({
-    width: screenWidth,
+    width: 400,
     height: 40,
-    x: 0,
+    x: (screenWidth - 400) / 2,
     y: screenHeight - 40,
     resizable: false,
     frame: false,
