@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset"UTF-8">
 	<script type="text/javascript" src="assistant.js"></script>
 	<style>
 		#huijia {
@@ -31,6 +31,17 @@
 			font-size: 150px;
 		}
 
+		#shici {
+			position: absolute;
+			left: 0%;
+			right: 0%;
+			top: 9.8%;
+			color: white;
+			text-align: center;
+			font-size: 100px;
+		}
+
+
 		#states {
 			position: absolute;
 			right: 0%;
@@ -47,6 +58,7 @@
 	<h1 id="xianzai"></h1>
 	<h1 id="huijia"></h1>
 	<h1 id="gaokao"></h1>
+	<h1 id="shici"></h1>
 	<div id="states">
 		<p id="runningtime"></p>
 		<p id="toolsbox"></p>
@@ -106,7 +118,6 @@
 			document.getElementById("runningtime").innerHTML = "toolsbox主程序已运行" + (days > 0 ? days + "天" : "") + hours + "时" + minutes + "分" + seconds + "秒";
 		}
 
-		/*
 		const urls = [
 			'https://v1.jinrishici.com/all',
 
@@ -117,12 +128,12 @@
 				.then(response => response.json())
 				.then(data => {
 					const juzi = data.content;
-					document.getElementById('juzi').textContent = juzi;
+					document.getElementById('shici').textContent = juzi;
 				})
 			currentUrlIndex = (currentUrlIndex + 1) % urls.length;
 		}
 		setInterval(fshici, 50000);
-		*/
+		setTimeout(fshici, 1000)
 	</script>
 </body>
 
