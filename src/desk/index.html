@@ -99,7 +99,7 @@
 		load();
 		function load() {
 			let xianzai = new Date();
-			document.getElementById("toolsbox").innerHTML = "toolsbox主程序已于" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒加载";
+			document.getElementById("toolsbox").innerHTML = "toolsbox已于" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒加载";
 		}
 
 		let starttime = new Date();
@@ -115,7 +115,7 @@
 			seconds = seconds % 60;
 			minutes = minutes % 60;
 			hours = hours % 24;
-			document.getElementById("runningtime").innerHTML = "toolsbox主程序已运行" + (days > 0 ? days + "天" : "") + hours + "时" + minutes + "分" + seconds + "秒";
+			document.getElementById("runningtime").innerHTML = "toolsbox已运行" + (days > 0 ? days + "天" : "") + hours + "时" + minutes + "分" + seconds + "秒";
 		}
 
 		const urls = [
