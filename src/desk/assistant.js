@@ -12,7 +12,7 @@ const classTimes = [
 ];
 
 function startAutoSpeech() {
-    const gaokaotime = document.getElementById("gaokao").innerText;
+    const gaokaotime = document.getElementById("gaokaosimple").innerText;
     const currentTime = new Date();
     const now = `${padZero(currentTime.getHours())}:${padZero(currentTime.getMinutes())}`;
     classTimes.forEach(classTime => {
@@ -35,6 +35,7 @@ function padZero(num) {
 setInterval(startAutoSpeech, 60000);
 
 setTimeout(load, 1000);
+//延迟加载，防出错
 function load() {
     let xianzai = new Date();
     document.getElementById("assistant").innerHTML = "高考倒计时与上下课播报已于" + xianzai.getFullYear() + "年" + (xianzai.getMonth() + 1) + "月" + xianzai.getDate() + "日" + xianzai.getHours() + "时" + xianzai.getMinutes() + "分" + xianzai.getSeconds() + "秒加载";

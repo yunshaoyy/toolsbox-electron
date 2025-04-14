@@ -4,7 +4,7 @@
 	<meta charset"UTF-8">
 	<script type="text/javascript" src="assistant.js"></script>
 	<style>
-		#huijia {
+		#right {
 			color: white;
 			text-align: right;
 			position: absolute;
@@ -21,11 +21,11 @@
 			text-align: center;
 		}
 
-		#gaokao {
+		#gaokaosimple {
 			position: absolute;
 			left: 0%;
 			right: 0%;
-			top: 21.1%;
+			bottom: 21.1%;
 			color: white;
 			text-align: center;
 			font-size: 150px;
@@ -38,7 +38,6 @@
 			top: 9.8%;
 			color: white;
 			text-align: center;
-			font-size: 50px;
 		}
 
 
@@ -56,9 +55,20 @@
 
 <body onload="fxianzai(),fgaokao(),fhuijia()">
 	<h1 id="xianzai"></h1>
+
+	<div id="right">
+	<h1 id="gaokaodetail"></h1>
 	<h1 id="huijia"></h1>
-	<h1 id="gaokao"></h1>
-	<h1 id="shici"></h1>
+	</div>
+
+	<h1 id="gaokaosimple"></h1>
+
+	<div id="shici">
+	<h1 id="origin"></h1>
+	<h1 id="author"></h1>
+	<h1 id="content"></h1>
+	</div>
+
 	<div id="states">
 		<p id="runningtime"></p>
 		<p id="toolsbox"></p>
@@ -88,11 +98,11 @@
 			let now = new Date();
 			let lgaokao = gaokao - now;
 			let gdays = Math.floor(lgaokao / (1000 * 60 * 60 * 24));
-			//let ghours = Math.floor((lgaokao % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			//let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
-			//let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
-			//document.getElementById("gaokao").innerHTML = `还有${gdays}天${ghours}时${gminutes}分${gseconds}秒高考`;
-			document.getElementById("gaokao").innerHTML = `还有${gdays}天高考`;
+			let ghours = Math.floor((lgaokao % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			let gminutes = Math.floor((lgaokao % (1000 * 60 * 60)) / (1000 * 60));
+			let gseconds = Math.floor((lgaokao % (1000 * 60)) / 1000);
+			document.getElementById("gaokaodetail").innerHTML = `还有${gdays}天${ghours}时${gminutes}分${gseconds}秒高考`;
+			document.getElementById("gaokaosimple").innerHTML = `还有${gdays}天高考`;
 		}
 		setInterval(fgaokao, 1000);
 
@@ -120,15 +130,18 @@
 
 		const urls = [
 			'https://v1.jinrishici.com/all',
-
 		];
 		let currentUrlIndex = 0;
 		function fshici() {
 			fetch(urls[currentUrlIndex])
 				.then(response => response.json())
 				.then(data => {
-					const juzi = data.content;
-					document.getElementById('shici').textContent = juzi;
+					const author = data.author;
+					const origin = data.origin;
+					const content = data.content;
+					document.getElementById('origin').textContent = origin;
+					document.getElementById('author').textContent = author;
+					document.getElementById('content').textContent = content;
 				})
 			currentUrlIndex = (currentUrlIndex + 1) % urls.length;
 		}
