@@ -28,10 +28,16 @@
 <body>
     <div class="container">
         <div class="pane">
+            <button class="close-btn" id="close-btn">退出程序</button>
             <p>https://github.com/yunshaoyy</p>
             <p>https://github.com/yunshaoyy/toolsbox-electron</p>
         </div>
     </div>
+      <script>
+        document.getElementById('close-btn').addEventListener('click', () => {
+         window.api.closeWindow();
+        });
+      </script>
 </body>
 
 </html>

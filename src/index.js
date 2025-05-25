@@ -1,5 +1,5 @@
 //https://github.com/yunshaoyy
-const { app, BrowserWindow, screen } = require('electron/main')
+const { app, BrowserWindow, screen, ipcMain } = require('electron/main')
 const path = require('path');
 
 if (require('electron-squirrel-startup')) {
@@ -59,8 +59,14 @@ app.on('web-contents-created', (e, webContents) => {
         height: screenHeight,
         webPreferences: {
           preload: path.join(__dirname, 'preload.js'),
+          nodeIntegration: false,
+          contextIsolation: true
         }
       }
     };
   });
+});
+
+ipcMain.on('close-window', () => {
+    app.quit()
 });
