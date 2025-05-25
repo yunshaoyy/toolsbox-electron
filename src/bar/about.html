@@ -20,6 +20,11 @@
             flex: 1;
             padding: 50px;
         }
+
+        .close-app-button{
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 
@@ -28,13 +33,13 @@
 <body>
     <div class="container">
         <div class="pane">
-            <button class="close-btn" id="close-btn">退出程序</button>
+            <button class="close-app-button" id="close-app-button">退出程序</button>
             <p>https://github.com/yunshaoyy</p>
             <p>https://github.com/yunshaoyy/toolsbox-electron</p>
         </div>
     </div>
       <script>
-        document.getElementById('close-btn').addEventListener('click', () => {
+        document.getElementById('close-app-button').addEventListener('click', () => {
          window.api.closeWindow();
         });
       </script>

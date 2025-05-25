@@ -67,6 +67,6 @@ app.on('web-contents-created', (e, webContents) => {
   });
 });
 
-ipcMain.on('close-window', () => {
+ipcMain.on('close-app', () => {
     app.quit()
 });
